@@ -1,7 +1,7 @@
 <!--The content below is only a placeholder and can be replaced.-->
 <mat-toolbar color="primary" class="main-nav">
   <button mat-raised-button [routerLink]="['/orders']" routerLinkActive="active">Orders</button>
-  <button mat-raised-button>Help</button>
+  <button mat-raised-button (click)="open()">Help</button>
 </mat-toolbar>
 <div class="main-grid">
   <div class="left-sidebar"></div>
@@ -22,5 +22,37 @@
   </div>
   <div class="modal-action">
       <button mat-raised-button color="primary" (click)="flex1.modal.cancel()">Close</button>
+  </div>
+</app-flex-modal>
+<app-flex-modal #flex2
+  [transition]="'slide-in-right'"  
+  [modalStyle]="{'border':'5px solid #CCC'}"
+  [showToolbar]="true" 
+  [showDefaultAction]="false" 
+  [modalID]="'error-modal'" 
+  [width]="'815px'"
+  [height]="'auto'">
+  <span class="modal-title">Warning</span>
+  <div class="modal-content">
+    <h3>Name must not be empty!</h3>
+  </div>
+  <div class="modal-action">
+      <button mat-raised-button color="primary" (click)="flex2.modal.cancel()">Close</button>
+  </div>
+</app-flex-modal>
+<app-flex-modal #flex3
+  [transition]="'slide-in-right'"  
+  [modalStyle]="{'border':'5px solid #CCC'}"
+  [showToolbar]="true" 
+  [showDefaultAction]="false" 
+  [modalID]="'error2-modal'" 
+  [width]="'815px'"
+  [height]="'auto'">
+  <span class="modal-title">Warning</span>
+  <div class="modal-content">
+    <h3>Name must have a comma and a space!</h3>
+  </div>
+  <div class="modal-action">
+      <button mat-raised-button color="primary" (click)="flex3.modal.cancel()">Close</button>
   </div>
 </app-flex-modal>
